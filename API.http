@@ -1,0 +1,35 @@
+### OneMart API Testing
+### Base URL for development
+
+@baseUrl = https://localhost:7000
+@contentType = application/json
+
+### Get Weather Forecast
+GET {{baseUrl}}/weatherforecast
+
+### Get OpenAPI Specification
+GET {{baseUrl}}/openapi/v1.json
+
+### Example: Get specific weather data (after you create endpoints)
+# GET {{baseUrl}}/api/users
+
+### Example: Create new resource
+# POST {{baseUrl}}/api/users
+# Content-Type: {{contentType}}
+#
+# {
+#   "name": "John Doe",
+#   "email": "john@example.com"
+# }
+
+### Example: Update resource
+# PUT {{baseUrl}}/api/users/1
+# Content-Type: {{contentType}}
+#
+# {
+#   "name": "Jane Doe",
+#   "email": "jane@example.com"
+# }
+
+### Example: Delete resource
+# DELETE {{baseUrl}}/api/users/1

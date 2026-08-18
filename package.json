@@ -1,0 +1,26 @@
+{
+  "name": "onemart",
+  "version": "1.0.0",
+  "description": "OneMart - Full-stack .NET + React Web Application",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend/OneMart.API && dotnet run",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend/OneMart.API && dotnet publish -c Release -o ../../dist/backend",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "npm run dev",
+    "install:all": "cd frontend && npm install"
+  },
+  "keywords": [
+    ".NET",
+    "React",
+    "Full-stack",
+    "Web Application"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
