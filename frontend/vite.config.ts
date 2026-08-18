@@ -1,9 +1,15 @@
 import { defineConfig } from 'vite'
 import react, { reactCompilerPreset } from '@vitejs/plugin-react'
 import babel from '@rolldown/plugin-babel'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // https://vite.dev/config/
 export default defineConfig({
+  root: __dirname,
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] })
@@ -12,12 +18,9 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'https://localhost:7000',
+        target: 'http://localhost:5036',
         changeOrigin: true,
-        secure: false, // Set to false for development with self-signed certificates
-        pathRewrite: {
-          '^/api': '/api' // Keep the /api prefix when proxying
-        }
+        secure: false
       }
     }
   }
